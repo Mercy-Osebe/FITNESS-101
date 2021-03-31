@@ -4,20 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/purple_200"
+    android:backgroundTint="@color/teal_700"
     android:foregroundTint="@color/teal_700"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
     <TextView
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:textSize="30sp"
-        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bmi_calculation">
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/aclonica"
+        android:text="@string/bmi_calculation"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="30sp"
+        android:textStyle="bold">
 
     </TextView>
 
@@ -29,7 +32,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textWeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/weight"
@@ -39,16 +42,16 @@
 
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/editWeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="8"
             android:maxLength="5"
-            android:inputType="number"
+            android:inputType="number|numberDecimal"
             android:hint="@string/enter_weight"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintStart_toEndOf="@+id/textWeight"
             app:layout_constraintTop_toBottomOf="@+id/Heading" />
 
     </LinearLayout>
@@ -62,7 +65,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textHeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/height"
@@ -71,43 +74,58 @@
             app:layout_constraintTop_toBottomOf="@+id/Heading" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/editHeight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="8"
-            android:inputType="number"
-            android:maxLength="5"
             android:hint="@string/enter_height"
+            android:inputType="number|numberDecimal"
+            android:maxLength="5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
+            app:layout_constraintTop_toBottomOf="@+id/editWeight" />
 
 
     </LinearLayout>
 
 
     <Button
-        android:layout_marginTop="120dp"
-        android:text="@string/get_bmi"
-        android:layout_gravity="center"
+        android:id="@+id/buttonBMI"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="150dp"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@color/teal_200"
+        android:text="@string/get_bmi"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:iconTint="#FFFFFF">
 
     </Button>
 
     <TextView
-        android:visibility="visible"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:textSize="30sp"
-        android:textColor="@color/black"
+        android:id="@+id/textResults"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/results">
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="@string/results"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:visibility="visible">
 
     </TextView>
 
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:text="Next"
+        android:textColor="@color/design_default_color_background"
+        app:rippleColor="@color/design_default_color_error">
 
-
+    </Button>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>
